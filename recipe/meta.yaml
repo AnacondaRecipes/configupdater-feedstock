@@ -38,7 +38,7 @@ test:
     - pip check
 
 about:
-  home: https://github.com/pyscaffold/configupdater
+  home: https://configupdater.readthedocs.io/
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
