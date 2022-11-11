@@ -10,17 +10,17 @@ source:
   sha256: 46f0c74d73efa723776764b43c9739f68052495dd3d734319c1d0eb58511f15b
 
 build:
-  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  skipt: true  # [py<36]
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
     - setuptools-scm
   run:
-    - python >=3.6
+    - python
     - importlib-metadata
 
 test:
