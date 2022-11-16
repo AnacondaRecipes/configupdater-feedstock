@@ -18,11 +18,12 @@ requirements:
   host:
     - python
     - pip
-    - setuptools-scm
+    - setuptools-scm >=5
+    - setuptools >=46.1.0
     - wheel
   run:
     - python
-    - importlib-metadata
+    - importlib-metadata  # [py<38]
 
 test:
   imports:
