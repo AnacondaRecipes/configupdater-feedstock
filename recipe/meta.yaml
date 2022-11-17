@@ -10,18 +10,21 @@ source:
   sha256: 46f0c74d73efa723776764b43c9739f68052495dd3d734319c1d0eb58511f15b
 
 build:
-  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  skipt: true  # [py<36]
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
-    - setuptools-scm
+    - setuptools-scm >=5
+    - setuptools >=46.1.0
+    - toml
+    - wheel
   run:
-    - python >=3.6
-    - importlib-metadata
+    - python
+    - importlib-metadata  # [py<38]
 
 test:
   imports:
@@ -37,7 +40,7 @@ test:
     - pip check
 
 about:
-  home: https://github.com/pyscaffold/configupdater
+  home: https://configupdater.readthedocs.io/
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
